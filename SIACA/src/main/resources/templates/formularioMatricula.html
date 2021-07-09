@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF=8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SIACA - Matrícula</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>Realização de matrícula</h1>
+		</div>
+
+		<form th:action="@{/registroMatricula}" th:object="${disciplina}" method="post"
+			style="max-width: 600px; margin: 0 auto;">
+			<div class="m-3">
+			<h3> Selecione as disciplinas desejadas</h3>
+			
+			<label class="col-4 col-form-label">Disciplina 1: </label>
+			<select th:field="*{nome}">
+					<option th:value="'Estrutura de Dados'" th:text="Estrutura de Dados"></option>
+					<option th:value="'Programação Web'" th:text="Programação Web"></option>
+					<option th:value="'Fundamentos de Redes de Computadores'" th:text="Fundamentos de Redes de Computadores"></option>
+				</select>
+				
+				<label class="col-4 col-form-label">Disciplina 2: </label>
+				<select th:field="*{nome}"></select>
+					<option th:value="'Gerência de Projeto'" th:text="Gerência de Projeto"></option>
+					<option th:value="'Empreendedorismo Digital'" th:text="Empreendedorismo Digital"></option>
+					<option th:value="'Sistema de Apoio à Decisão'" th:text="Sistema de Apoio à Decisão"></option>
+				</select>
+				
+				<label class="col-4 col-form-label">Disciplina 3: </label>
+				<select th:field="*{nome}"></select>
+					<option th:value="'Projeto Integrador (EAD)'" th:text="Projeto Integrador (EAD)"></option>
+					<option th:value="'Metodologia Científica'" th:text="Metodologia Científica"></option>
+					<option th:value="'Sociologia das Organizações'" th:text="Sociologia das Organizações"></option>
+				</select>
+				
+				<label class="col-4 col-form-label">Disciplina 4: </label>
+				<select th:field="*{nome}"></select>
+					<option th:value="'Optativa I'" th:text="Optativa I"></option>
+					<option th:value="'Optativa II'" th:text="Optativa II"></option>
+					<option th:value="'Optativa III'" th:text="Optativa III"></option>
+				</select>
+
+			</div>
+
+			<div>
+				<button type="submit" class="btn btn-primary">Concluir</button>
+			</div>
+	</div>
+	</form>
+	</div>
+</body>
+
+</html>

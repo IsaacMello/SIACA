@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF=8">
+    <title>Cadastro Realizado com sucesso!</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container text-center">
+        <h3>Cadastrado com sucesso!</h3>
+      <h4><a th:href="@{/}">Clique aqui para voltar</a></h4>
+    </div>
+    
+     <!-- th:block rather than unneeded div -->
+<th:block th:switch="${usuario.tipoUsuario}">
+    <div th:case="'aluno'">
+        th:action="@{/aluno}"
+    </div>
+  
+</th:block>
+     
+</body>
+</html>

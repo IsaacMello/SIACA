@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF=8">
+    <title>Disciplina cadastrada!</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container text-center">
+        <h3>Disciplina cadastrada com sucesso!</h3>
+      <h4><a th:href="@{/}">Clique aqui para voltar</a></h4>
+    </div>
+    
+     <!-- th:block rather than unneeded div -->
+<th:block th:switch="${disciplina.nome}">
+    <div th:case="'disciplina'">
+        th:action="@{/disciplina}"
+    </div>
+  
+</th:block>
+     
+</body>
+</html>
